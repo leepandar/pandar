@@ -1,0 +1,43 @@
+2025-10-18 15:47:01.303 [] INFO  [background-preinit] o.h.validator.internal.util.Version - HV000001: Hibernate Validator 8.0.0.Final
+2025-10-18 15:47:01.334 [] INFO  [main] com.pandar.Application - Starting Application using Java 17.0.6 with PID 2439 (/Users/lida/workspace/pandar/target/classes started by lida in /Users/lida/workspace/pandar)
+2025-10-18 15:47:01.334 [] DEBUG [main] com.pandar.Application - Running with Spring Boot v3.1.1, Spring v6.0.10
+2025-10-18 15:47:01.335 [] INFO  [main] com.pandar.Application - The following 1 profile is active: "dev"
+2025-10-18 15:47:02.355 [] WARN  [main] o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.pandar.config.resubmit.ReSubmitAspect
+2025-10-18 15:47:02.356 [] WARN  [main] o.s.c.LocalVariableTableParameterNameDiscoverer - Using deprecated '-debug' fallback for parameter name resolution. Compile the affected code with '-parameters' instead or avoid its introspection: com.pandar.config.tenant.TenantIgnoreAspect
+2025-10-18 15:47:02.857 [] INFO  [main] o.a.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-9527"]
+2025-10-18 15:47:02.858 [] INFO  [main] o.a.catalina.core.StandardService - Starting service [Tomcat]
+2025-10-18 15:47:02.858 [] INFO  [main] o.a.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/10.1.10]
+2025-10-18 15:47:02.922 [] INFO  [main] o.a.c.c.C.[.[localhost].[/pandar] - Initializing Spring embedded WebApplicationContext
+2025-10-18 15:47:03.025 [] INFO  [main] com.zaxxer.hikari.HikariDataSource - master - Starting...
+2025-10-18 15:47:03.159 [] INFO  [main] com.zaxxer.hikari.HikariDataSource - master - Start completed.
+2025-10-18 15:47:03.160 [] INFO  [main] c.b.d.d.DynamicRoutingDataSource - dynamic-datasource - add a datasource named [master] success
+2025-10-18 15:47:03.160 [] INFO  [main] c.b.d.d.DynamicRoutingDataSource - dynamic-datasource initial loaded [1] datasource,primary datasource named [master]
+2025-10-18 15:47:03.633 [] INFO  [main] org.redisson.Version - Redisson 3.36.0
+2025-10-18 15:47:03.660 [] WARN  [main] i.n.r.d.DnsServerAddressStreamProviders - Can not find io.netty.resolver.dns.macos.MacOSDnsServerAddressStreamProvider in the classpath, fallback to system defaults. This may result in incorrect DNS resolutions on MacOS. Check whether you have a dependency on 'io.netty:netty-resolver-dns-native-macos'
+2025-10-18 15:47:03.767 [] INFO  [redisson-netty-1-3] o.r.connection.ConnectionsHolder - 1 connections initialized for 127.0.0.1/127.0.0.1:6379
+2025-10-18 15:47:04.541 [] DEBUG [main] c.p.m.S.selectListByQuery - ==>  Preparing: SELECT `storage_id`, `storage_name`, `storage_type`, `description`, `storage_config`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_storage` WHERE (`storage_type` = ? AND `status` = ?) AND `deleted` = ?
+2025-10-18 15:47:04.559 [] DEBUG [main] c.p.m.S.selectListByQuery - ==> Parameters: local(String), 1(Integer), 0(Integer)
+2025-10-18 15:47:04.579 [] DEBUG [main] c.p.m.S.selectListByQuery - <==      Total: 1
+2025-10-18 15:47:04.580 [] INFO  [main] mybatis-flex-sql - SELECT `storage_id`, `storage_name`, `storage_type`, `description`, `storage_config`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_storage` WHERE (`storage_type` = 'local' AND `status` = 1) AND `deleted` = 0,21 ms
+2025-10-18 15:47:05.395 [] INFO  [main] o.a.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-9527"]
+2025-10-18 15:47:05.413 [] INFO  [main] com.pandar.Application - Started Application in 4.566 seconds (process running for 5.275)
+2025-10-18 15:47:05.516 [] DEBUG [main] c.p.m.ConfigMapper.selectListByQuery - ==>  Preparing: SELECT `config_id`, `config_name`, `config_key`, `config_value`, `description`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_config` WHERE (`status` = ?) AND `deleted` = ?
+2025-10-18 15:47:05.516 [] DEBUG [main] c.p.m.ConfigMapper.selectListByQuery - ==> Parameters: 1(Integer), 0(Integer)
+2025-10-18 15:47:05.524 [] DEBUG [main] c.p.m.ConfigMapper.selectListByQuery - <==      Total: 3
+2025-10-18 15:47:05.524 [] INFO  [main] mybatis-flex-sql - SELECT `config_id`, `config_name`, `config_key`, `config_value`, `description`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_config` WHERE (`status` = 1) AND `deleted` = 0,8 ms
+2025-10-18 15:47:05.545 [] DEBUG [main] c.p.m.ConfigMapper.selectListByQuery - ==>  Preparing: SELECT `config_id`, `config_name`, `config_key`, `config_value`, `description`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_config` WHERE (`config_key` = ? AND `status` = ?) AND `deleted` = ? LIMIT 1
+2025-10-18 15:47:05.545 [] DEBUG [main] c.p.m.ConfigMapper.selectListByQuery - ==> Parameters: system.config.tenant(String), 1(Integer), 0(Integer)
+2025-10-18 15:47:05.551 [] DEBUG [main] c.p.m.ConfigMapper.selectListByQuery - <==      Total: 1
+2025-10-18 15:47:05.552 [] INFO  [main] mybatis-flex-sql - SELECT `config_id`, `config_name`, `config_key`, `config_value`, `description`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_config` WHERE (`config_key` = 'system.config.tenant' AND `status` = 1) AND `deleted` = 0 LIMIT 1,7 ms
+2025-10-18 15:47:05.553 [] DEBUG [main] c.p.m.TenantMapper.selectListByQuery - ==>  Preparing: SELECT `tenant_id`, `user_id`, `package_id`, `tenant_name`, `expire_time`, `account_count`, `data_isolation`, `datasource`, `storage_id`, `status`, `remark`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_tenant` WHERE (`status` = ?) AND `deleted` = ?
+2025-10-18 15:47:05.554 [] DEBUG [main] c.p.m.TenantMapper.selectListByQuery - ==> Parameters: 1(Integer), 0(Integer)
+2025-10-18 15:47:05.560 [] DEBUG [main] c.p.m.TenantMapper.selectListByQuery - <==      Total: 6
+2025-10-18 15:47:05.560 [] INFO  [main] mybatis-flex-sql - SELECT `tenant_id`, `user_id`, `package_id`, `tenant_name`, `expire_time`, `account_count`, `data_isolation`, `datasource`, `storage_id`, `status`, `remark`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_tenant` WHERE (`status` = 1) AND `deleted` = 0,6 ms
+2025-10-18 15:47:05.561 [] DEBUG [main] c.p.m.T.selectListByQuery - ==>  Preparing: SELECT `id`, `datasource_id`, `tenant_id`, `datasource_name`, `datasource_url`, `username`, `password` FROM `sys_tenant_datasource`
+2025-10-18 15:47:05.561 [] DEBUG [main] c.p.m.T.selectListByQuery - ==> Parameters: 
+2025-10-18 15:47:05.566 [] DEBUG [main] c.p.m.T.selectListByQuery - <==      Total: 0
+2025-10-18 15:47:05.567 [] INFO  [main] mybatis-flex-sql - SELECT `id`, `datasource_id`, `tenant_id`, `datasource_name`, `datasource_url`, `username`, `password` FROM `sys_tenant_datasource`,5 ms
+2025-10-18 15:47:05.567 [] DEBUG [main] c.p.m.S.selectListByQuery - ==>  Preparing: SELECT `storage_id`, `storage_name`, `storage_type`, `description`, `storage_config`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_storage` WHERE (`status` = ?) AND `deleted` = ?
+2025-10-18 15:47:05.568 [] DEBUG [main] c.p.m.S.selectListByQuery - ==> Parameters: 1(Integer), 0(Integer)
+2025-10-18 15:47:05.571 [] DEBUG [main] c.p.m.S.selectListByQuery - <==      Total: 3
+2025-10-18 15:47:05.571 [] INFO  [main] mybatis-flex-sql - SELECT `storage_id`, `storage_name`, `storage_type`, `description`, `storage_config`, `status`, `id`, `deleted`, `create_id`, `update_id`, `create_time`, `update_time`, `version` FROM `sys_storage` WHERE (`status` = 1) AND `deleted` = 0,3 ms

@@ -1,0 +1,165 @@
+############## mybatis-flex 配置 ##############
+mybatis-flex:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+  mapper-locations:
+    - classpath*:mapper/**/*.xml
+  global-config:
+    # 逻辑删除字段
+    logic-delete-column: deleted
+  # 别名包扫描路径
+  type-aliases-package: com.pandar.**.entity
+
+############## openapi 项目文档配置 ##############
+springdoc:
+  title: 多租户开发平台
+  authorName: leepandar
+  authorUrl: https://apebbs.cn
+  authorEmail: 849998287@qq.com
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: '1.全部'
+      paths-to-match: '/**'
+      packages-to-scan: com.pandar
+
+############## knife4j配置 ##############
+knife4j:
+  # 启用增强模式
+  enable: true
+  setting:
+    language: zh_cn
+    swagger-model-name: 实体说明
+
+############## spring配置 ##############
+spring:
+  datasource:
+    dynamic:
+      primary: master
+      strict: false
+      hikari:
+        # 最小空闲连接数量
+        minimum-idle: 20
+        # 连接池最大连接数，默认是10
+        maximum-pool-size: 100
+        # 空闲连接存活最大时间，默认600000
+        idle-timeout: 30000
+        # 此属性控制池中连接的最长生命周期，值0表示无限生命周期，默认1800000即30分钟
+        max-lifetime: 60000
+        # 数据库连接超时时间,默认30秒，即30000
+        connection-timeout: 30000
+        # 测试连接
+        connection-test-query: "SELECT 1"
+      datasource:
+        master:
+          type: com.zaxxer.hikari.HikariDataSource
+          driver-class-name: com.mysql.cj.jdbc.Driver
+          username: root
+          password: root
+          url: jdbc:mysql://localhost:3306/pandar?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowMultiQueries=true&useAffectedRows=true&rewriteBatchedStatements=true
+  servlet:
+    multipart:
+      # 单个文件大小
+      max-file-size: 100MB
+      # 总文件大小
+      max-request-size: 256MB
+  data:
+    # redis配置
+    redis:
+      # Redis数据库索引（默认为0）
+      database: 3
+      # Redis服务器地址
+      host: 127.0.0.1
+      # Redis服务器连接端口
+      port: 6379
+      # Redis服务器连接密码（默认为空）
+      password:
+      # 读取超时时间
+      timeout: 10s
+      # 连接超时时间
+      connect-timeout: 5s
+      lettuce:
+        pool:
+          enabled: true
+          # 连接池最大连接数
+          max-active: 200
+          # 连接池最大阻塞等待时间（使用负值表示没有限制）
+          max-wait: -1ms
+          # 连接池中的最大空闲连接
+          max-idle: 10
+          # 连接池中的最小空闲连接
+          min-idle: 0
+  # 文件存储配置
+  file-storage:
+    # 默认使用的存储平台
+    default-platform: "local-1"
+    local: # 本地存储（不推荐使用），不使用的情况下可以不写
+      - platform: local-1 # 存储平台标识
+        enable-storage: true  #启用存储
+        enable-access: true #启用访问（线上请使用 Nginx 配置，效率更高）
+        domain: http://localhost:${server.port}${server.servlet.context-path}/files/ # 访问域名，例如：“http://127.0.0.1:8030/test/file/”，注意后面要和 path-patterns 保持一致，“/”结尾，本地存储建议使用相对路径，方便后期更换域名
+        base-path: ${user.dir}/files/ # 文件存储路径：${user.dir}/files中间不能写 + 拼接，会被当成字符串
+        path-patterns: "/**" # 访问路径，开启 enable-access 后，通过此路径可以访问到上传的文件
+
+############## redisson配置 ##############
+redisson:
+  address: redis://${spring.data.redis.host}:${spring.data.redis.port}
+  password: ${spring.data.redis.password}
+  database: 3
+  pingInterval: 10000
+  connectionPoolSize: 100
+  connectionMinimumIdleSize: 0
+
+############## XSS配置 ##############
+mica:
+  xss:
+    # 开启xss
+    enabled: true
+    # 【全局】是否去除文本首尾空格
+    trim-text: true
+    # mode有三个模式：clear清理（默认）、escape转义、validate校验，
+    # validate校验模式，校验未通过会抛出异常，可使用全局异常捕获进行处理
+    # clear模式，会将不允许的数据清理掉
+    # escape模式，会将不允许的数据转义
+    # 出错抛出的异常：
+    # json处理默认使用jackson，jackson校验未通过异常：HttpMessageNotReadableException
+    # form表单校验未通过异常：MethodArgumentConversionNotSupportedException
+    mode: clear
+    # 是否保留换行
+    pretty-print: false
+    # 是否转义
+    enable-escape: false
+    # 需要拦截的路由
+    path-patterns: /**
+    # 需要放行的路由，可以配置，也可以使用 @XssCleanIgnore 注解对某个方法和类进行忽略
+    # 若需要对实体类的某个字段忽略，使用 @JsonDeserialize(using = XssCleanDeserializer.class) 注解忽略
+    path-exclude-patterns:
+
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token 名称，默认：satoken
+  token-name: Authentication
+  # token 有效期（单位：秒） 604800秒=7天，默认2592000秒=30天，-1=永久有效
+  timeout: 604800
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: false
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: simple-uuid
+  # 是否输出操作日志
+  is-log: true
+
+############## 日志配置 ##############
+logging:
+  level:
+    com.pandar: debug
+    org.springframework: warn
+  config: classpath:logback.xml

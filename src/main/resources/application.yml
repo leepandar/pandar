@@ -1,0 +1,10 @@
+server:
+  port: 9527
+  servlet:
+    context-path: /pandar
+    encoding:
+      charset: UTF-8
+      force: true
+spring:
+  profiles:
+    active: @spring.profiles.active@

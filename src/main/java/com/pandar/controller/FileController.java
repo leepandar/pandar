@@ -1,0 +1,62 @@
+package com.pandar.controller;
+
+import cn.dev33.satoken.annotation.SaCheckPermission;
+import com.pandar.common.base.PageResp;
+import com.pandar.domain.dto.sys.FileQueryDTO;
+import com.pandar.domain.dto.sys.FileUploadBatchDTO;
+import com.pandar.domain.dto.sys.FileUploadDTO;
+import com.pandar.domain.vo.sys.FileUploadRespVO;
+import com.pandar.domain.vo.sys.FileVO;
+import com.pandar.service.FileService;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.tags.Tag;
+import jakarta.validation.constraints.NotNull;
+import lombok.RequiredArgsConstructor;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.annotation.Validated;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
+
+@Tag(name = "文件管理")
+@RequestMapping("/sys/file")
+@Validated
+@RestController
+@RequiredArgsConstructor
+public class FileController {
+
+    private final FileService fileService;
+
+    @PostMapping("/uploadFile")
+    @SaCheckPermission("sys:file:upload")
+    @Operation(summary = "单文件上传")
+    public ResponseEntity<FileUploadRespVO> uploadFile(@Validated FileUploadDTO fileUpload) {
+        return ResponseEntity.ok(fileService.uploadFile(fileUpload));
+    }
+
+    @PostMapping("/uploadFileBatch")
+    @SaCheckPermission("sys:file:upload")
+    @Operation(summary = "批量文件上传")
+    public ResponseEntity<List<FileUploadRespVO>> uploadFileBatch(@Validated FileUploadBatchDTO uploadBatch) {
+        return ResponseEntity.ok(fileService.uploadFileBatch(uploadBatch));
+    }
+
+    @DeleteMapping("/deleteFile")
+    @SaCheckPermission("sys:file:del")
+    @Operation(summary = "单文件删除")
+    public ResponseEntity<Void> deleteFile(@RequestParam("fileId")
+                                           @NotNull(message = "文件ID不能为空")
+                                           @Parameter(name = "fileId", required = true, description = "fileId") Long fileId) {
+        fileService.deleteFile(fileId);
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/getPageFileList")
+    @SaCheckPermission("sys:file:query")
+    @Operation(summary = "查询文件列表(分页)")
+    public ResponseEntity<PageResp<FileVO>> getPageFileList(FileQueryDTO query) {
+        return ResponseEntity.ok(fileService.getPageFileList(query));
+    }
+
+}
