@@ -41,7 +41,7 @@ public class SwaggerConfig {
                 //文档页面标题
                 .title(title)
                 //描述
-                .description(title + "接口文档")
+                .description(title + "Pandar接口文档")
                 //版本号
                 .version("1.0.0")
                 //作者信息

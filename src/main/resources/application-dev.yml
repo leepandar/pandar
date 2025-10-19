@@ -13,9 +13,9 @@ mybatis-flex:
 
 ############## openapi 项目文档配置 ##############
 springdoc:
-  title: 多租户开发平台
+  title: Pandar
   authorName: leepandar
-  authorUrl: https://apebbs.cn
+  authorUrl: https://leepandar.cn
   authorEmail: 849998287@qq.com
   swagger-ui:
     path: /swagger-ui.html
@@ -24,9 +24,15 @@ springdoc:
   api-docs:
     path: /v3/api-docs
   group-configs:
-    - group: '1.全部'
-      paths-to-match: '/**'
-      packages-to-scan: com.pandar
+    - group: '1.权限认证'
+      paths-to-match: '/auth'
+      packages-to-scan: com.pandar.controller.auth
+    - group: '2.系统设置'
+      paths-to-match: '/sys/config'
+      packages-to-scan: com.pandar.controller.sys
+    - group: '3.租户设置'
+      paths-to-match: '/tenant'
+      packages-to-scan: com.pandar.controller.tenant
 
 ############## knife4j配置 ##############
 knife4j:

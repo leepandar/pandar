@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.base.PageResp;
@@ -26,40 +26,14 @@ public class RoleController {
 
     private final RoleService roleService;
 
-    @PostMapping("/addRole")
-    @SaCheckPermission("sys:role:add")
-    @Operation(summary = "添加角色")
-    public ResponseEntity<Void> addRole(@RequestBody @Validated(Add.class) RoleDTO roleDTO) {
-        roleService.addRole(roleDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("/deleteRoleByRoleId")
-    @SaCheckPermission("sys:role:del")
-    @Operation(summary = "删除角色 -> 根据角色ID删除角色")
-    public ResponseEntity<Void> deleteRoleByRoleId(@RequestParam("roleId")
-                                                   @NotNull(message = "角色ID不能为空")
-                                                   @Parameter(name = "roleId", required = true, description = "角色ID") Long roleId) {
-        roleService.deleteRoleByRoleId(roleId);
-        return ResponseEntity.ok().build();
-    }
-
-    @PutMapping("/updateRoleByRoleId")
-    @SaCheckPermission("sys:role:edit")
-    @Operation(summary = "修改角色 -> 根据角色ID修改")
-    public ResponseEntity<Void> updateRoleByRoleId(@RequestBody @Validated(Update.class) RoleDTO roleDTO) {
-        roleService.updateRoleByRoleId(roleDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/getPageRoleList")
+    @GetMapping("/page")
     @SaCheckPermission("sys:role:query")
     @Operation(summary = "查询角色(分页) -> 角色管理使用")
     public ResponseEntity<PageResp<RoleVO>> getPageRoleList(RoleQueryDTO query) {
         return ResponseEntity.ok(roleService.getPageRoleList(query));
     }
 
-    @GetMapping("/getRoleByRoleId/{roleId}")
+    @GetMapping("/{roleId}")
     @SaCheckPermission("sys:role:query")
     @Operation(summary = "根据角色ID查询角色")
     public ResponseEntity<RoleVO> getRoleByRoleId(@PathVariable(value = "roleId")
@@ -68,4 +42,29 @@ public class RoleController {
         return ResponseEntity.ok(roleService.getRoleByRoleId(roleId));
     }
 
+    @PostMapping("/add")
+    @SaCheckPermission("sys:role:add")
+    @Operation(summary = "添加角色")
+    public ResponseEntity<Void> addRole(@RequestBody @Validated(Add.class) RoleDTO roleDTO) {
+        roleService.addRole(roleDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/edit")
+    @SaCheckPermission("sys:role:edit")
+    @Operation(summary = "修改角色 -> 根据角色ID修改")
+    public ResponseEntity<Void> updateRoleByRoleId(@RequestBody @Validated(Update.class) RoleDTO roleDTO) {
+        roleService.updateRoleByRoleId(roleDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/delete")
+    @SaCheckPermission("sys:role:del")
+    @Operation(summary = "删除角色 -> 根据角色ID删除角色")
+    public ResponseEntity<Void> deleteRoleByRoleId(@RequestParam("roleId")
+                                                   @NotNull(message = "角色ID不能为空")
+                                                   @Parameter(name = "roleId", required = true, description = "角色ID") Long roleId) {
+        roleService.deleteRoleByRoleId(roleId);
+        return ResponseEntity.ok().build();
+    }
 }

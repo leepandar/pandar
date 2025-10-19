@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.auth;
 
 import cn.dev33.satoken.annotation.SaIgnore;
 import cn.dev33.satoken.stp.SaTokenInfo;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @Tag(name = "用户登陆")
-@RequestMapping("/sys")
+@RequestMapping("/auth")
 @Validated
 @RestController
 @RequiredArgsConstructor

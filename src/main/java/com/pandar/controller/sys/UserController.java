@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckLogin;
 import cn.dev33.satoken.annotation.SaCheckPermission;
@@ -31,7 +31,7 @@ public class UserController {
 
     private final UserService userService;
 
-    @PostMapping("/addUser")
+    @PostMapping("/add")
     @SaCheckPermission("sys:user:add")
     @Operation(summary = "添加用户")
     public ResponseEntity<Void> addUser(@RequestBody @Validated(Add.class) UserDTO userDTO) {
@@ -39,7 +39,7 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @DeleteMapping("/deleteUserByUserId")
+    @DeleteMapping("/delete")
     @SaCheckPermission("sys:user:del")
     @Operation(summary = "删除用户 -> 根据用户ID删除")
     public ResponseEntity<Void> deleteUserByUserId(@RequestParam("userId")
@@ -49,7 +49,7 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @PutMapping("/updateUserByUserId")
+    @PutMapping("/edit")
     @SaCheckPermission("sys:user:edit")
     @Operation(summary = "修改用户")
     public ResponseEntity<Void> updateUserByUserId(@RequestBody @Validated(Update.class) UserDTO userDTO) {
@@ -57,14 +57,14 @@ public class UserController {
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/getPageUserList")
+    @GetMapping("/page")
     @SaCheckPermission("sys:user:query")
     @Operation(summary = "查询用户(分页)")
     public ResponseEntity<PageResp<UserVO>> getPageUserList(UserQueryDTO query) {
         return ResponseEntity.ok(userService.getPageUserList(query));
     }
 
-    @GetMapping("/getUserByUserId/{userId}")
+    @GetMapping("/{userId}")
     @SaCheckPermission("sys:user:query")
     @Operation(summary = "根据用户ID查询用户 -> 用户管理页使用")
     public ResponseEntity<UserVO> getUserByUserId(@PathVariable(value = "userId")
@@ -74,14 +74,14 @@ public class UserController {
     }
 
     //@TenantIgnore
-    @GetMapping("/getUserInfo")
+    @GetMapping("/info")
     @Operation(summary = "获取用户信息(登录后获取，含角色、权限、菜单、部门等)")
     public ResponseEntity<UserInfoVO> getUserInfo() {
         return ResponseEntity.ok(userService.getUserInfo());
     }
 
     @SaIgnore
-    @GetMapping("/getImageCaptcha")
+    @GetMapping("/captcha")
     @Operation(summary = "获取图形验证码")
     public ResponseEntity<ImageCaptchaVO> getImageCaptcha() {
         return ResponseEntity.ok(userService.getImageCaptcha());
@@ -96,7 +96,7 @@ public class UserController {
     }
 
     @SaCheckLogin
-    @PostMapping("/updateUserAvatar")
+    @PostMapping("/avatar")
     @Operation(summary = "修改用户头像")
     public ResponseEntity<Void> updateUserAvatar(@RequestParam("userAvatar")
                                                  @NotBlank(message = "用户头像不能为空")
@@ -106,7 +106,7 @@ public class UserController {
     }
 
     @SaCheckLogin
-    @PostMapping("/updateUserInfo")
+    @PostMapping("/info")
     @Operation(summary = "修改用户基本信息")
     public ResponseEntity<Void> updateUserInfo(@RequestBody @Valid UserSettingDTO setting) {
         userService.updateUserInfo(setting);

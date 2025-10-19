@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.group.Add;
@@ -27,47 +27,21 @@ public class DeptController {
 
     private final DeptService deptService;
 
-    @PostMapping("/addDept")
-    @SaCheckPermission("sys:dept:add")
-    @Operation(summary = "添加部门")
-    public ResponseEntity<Void> addDept(@RequestBody @Validated(Add.class) DeptDTO deptDTO) {
-        deptService.addDept(deptDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("/deleteDeptByDeptId")
-    @SaCheckPermission("sys:dept:del")
-    @Operation(summary = "删除部门 -> 根据部门ID删除")
-    public ResponseEntity<Void> deleteDeptByDeptId(@RequestParam("deptId")
-                                                   @NotNull(message = "部门ID不能为空")
-                                                   @Parameter(name = "deptId", required = true, description = "部门ID") Long deptId) {
-        deptService.deleteDeptByDeptId(deptId);
-        return ResponseEntity.ok().build();
-    }
-
-    @PutMapping("/updateDeptByDeptId")
-    @SaCheckPermission("sys:dept:edit")
-    @Operation(summary = "修改部门 -> 根据部门ID修改")
-    public ResponseEntity<Void> updateDeptByDeptId(@RequestBody @Validated(Update.class) DeptDTO deptDTO) {
-        deptService.updateDeptByDeptId(deptDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/getDeptList")
+    @GetMapping("/list")
     @SaCheckPermission("sys:dept:query")
     @Operation(summary = "查询部门列表(不分页，获取全部数据) -> 部门管理使用")
     public ResponseEntity<List<DeptVO>> getDeptList(DeptQueryDTO query) {
         return ResponseEntity.ok(deptService.getDeptList(query));
     }
 
-    @GetMapping("/getEnableDeptList")
+    @GetMapping("/enable/list")
     @SaCheckPermission("sys:dept:query")
     @Operation(summary = "查询部门树 -> 只获取正常状态的部门")
     public ResponseEntity<List<DeptVO>> getEnableDeptList() {
         return ResponseEntity.ok(deptService.getEnableDeptList());
     }
 
-    @GetMapping("/getDeptByDeptId/{deptId}")
+    @GetMapping("/{deptId}")
     @SaCheckPermission("sys:dept:query")
     @Operation(summary = "根据部门ID查询部门")
     public ResponseEntity<DeptVO> getDeptByDeptId(@PathVariable(value = "deptId")
@@ -76,4 +50,29 @@ public class DeptController {
         return ResponseEntity.ok(deptService.getDeptByDeptId(deptId));
     }
 
+    @PostMapping("/add")
+    @SaCheckPermission("sys:dept:add")
+    @Operation(summary = "添加部门")
+    public ResponseEntity<Void> addDept(@RequestBody @Validated(Add.class) DeptDTO deptDTO) {
+        deptService.addDept(deptDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/edit")
+    @SaCheckPermission("sys:dept:edit")
+    @Operation(summary = "修改部门 -> 根据部门ID修改")
+    public ResponseEntity<Void> updateDeptByDeptId(@RequestBody @Validated(Update.class) DeptDTO deptDTO) {
+        deptService.updateDeptByDeptId(deptDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/delete")
+    @SaCheckPermission("sys:dept:del")
+    @Operation(summary = "删除部门 -> 根据部门ID删除")
+    public ResponseEntity<Void> deleteDeptByDeptId(@RequestParam("deptId")
+                                                   @NotNull(message = "部门ID不能为空")
+                                                   @Parameter(name = "deptId", required = true, description = "部门ID") Long deptId) {
+        deptService.deleteDeptByDeptId(deptId);
+        return ResponseEntity.ok().build();
+    }
 }

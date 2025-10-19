@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.base.PageResp;
@@ -26,40 +26,14 @@ public class PostController {
 
     private final PostService postService;
 
-    @PostMapping("/addPost")
-    @SaCheckPermission("sys:post:add")
-    @Operation(summary = "添加岗位")
-    public ResponseEntity<Void> addPost(@RequestBody @Validated(Add.class) PostDTO postDTO) {
-        postService.addPost(postDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("/deletePostByPostId")
-    @SaCheckPermission("sys:post:del")
-    @Operation(summary = "删除岗位 -> 根据岗位ID删除")
-    public ResponseEntity<Void> deletePostByPostId(@RequestParam("postId")
-                                                   @NotNull(message = "岗位ID不能为空")
-                                                   @Parameter(name = "postId", required = true, description = "岗位ID") Long postId) {
-        postService.deletePostByPostId(postId);
-        return ResponseEntity.ok().build();
-    }
-
-    @PutMapping("/updatePostByPostId")
-    @SaCheckPermission("sys:post:edit")
-    @Operation(summary = "修改岗位 -> 根据岗位ID修改")
-    public ResponseEntity<Void> updatePostByPostId(@RequestBody @Validated(Update.class) PostDTO postDTO) {
-        postService.updatePostByPostId(postDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/getPagePostList")
+    @GetMapping("/page")
     @SaCheckPermission("sys:post:query")
     @Operation(summary = "查询岗位列表(分页)")
     public ResponseEntity<PageResp<PostVO>> getPagePostList(PostQueryDTO query) {
         return ResponseEntity.ok(postService.getPagePostList(query));
     }
 
-    @GetMapping("/getPostByPostId/{postId}")
+    @GetMapping("/{postId}")
     @SaCheckPermission("sys:post:query")
     @Operation(summary = "根据岗位ID查询岗位")
     public ResponseEntity<PostVO> getPostByPostId(@PathVariable(value = "postId")
@@ -68,4 +42,29 @@ public class PostController {
         return ResponseEntity.ok(postService.getPostByPostId(postId));
     }
 
+    @PostMapping("/add")
+    @SaCheckPermission("sys:post:add")
+    @Operation(summary = "添加岗位")
+    public ResponseEntity<Void> addPost(@RequestBody @Validated(Add.class) PostDTO postDTO) {
+        postService.addPost(postDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/edit")
+    @SaCheckPermission("sys:post:edit")
+    @Operation(summary = "修改岗位 -> 根据岗位ID修改")
+    public ResponseEntity<Void> updatePostByPostId(@RequestBody @Validated(Update.class) PostDTO postDTO) {
+        postService.updatePostByPostId(postDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/delete")
+    @SaCheckPermission("sys:post:del")
+    @Operation(summary = "删除岗位 -> 根据岗位ID删除")
+    public ResponseEntity<Void> deletePostByPostId(@RequestParam("postId")
+                                                   @NotNull(message = "岗位ID不能为空")
+                                                   @Parameter(name = "postId", required = true, description = "岗位ID") Long postId) {
+        postService.deletePostByPostId(postId);
+        return ResponseEntity.ok().build();
+    }
 }

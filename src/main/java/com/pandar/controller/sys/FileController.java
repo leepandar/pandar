@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.base.PageResp;
@@ -28,21 +28,28 @@ public class FileController {
 
     private final FileService fileService;
 
-    @PostMapping("/uploadFile")
+    @GetMapping("/page")
+    @SaCheckPermission("sys:file:query")
+    @Operation(summary = "查询文件列表(分页)")
+    public ResponseEntity<PageResp<FileVO>> getPageFileList(FileQueryDTO query) {
+        return ResponseEntity.ok(fileService.getPageFileList(query));
+    }
+
+    @PostMapping("/upload")
     @SaCheckPermission("sys:file:upload")
     @Operation(summary = "单文件上传")
     public ResponseEntity<FileUploadRespVO> uploadFile(@Validated FileUploadDTO fileUpload) {
         return ResponseEntity.ok(fileService.uploadFile(fileUpload));
     }
 
-    @PostMapping("/uploadFileBatch")
+    @PostMapping("/uploadBatch")
     @SaCheckPermission("sys:file:upload")
     @Operation(summary = "批量文件上传")
     public ResponseEntity<List<FileUploadRespVO>> uploadFileBatch(@Validated FileUploadBatchDTO uploadBatch) {
         return ResponseEntity.ok(fileService.uploadFileBatch(uploadBatch));
     }
 
-    @DeleteMapping("/deleteFile")
+    @DeleteMapping("/delete")
     @SaCheckPermission("sys:file:del")
     @Operation(summary = "单文件删除")
     public ResponseEntity<Void> deleteFile(@RequestParam("fileId")
@@ -51,12 +58,4 @@ public class FileController {
         fileService.deleteFile(fileId);
         return ResponseEntity.ok().build();
     }
-
-    @GetMapping("/getPageFileList")
-    @SaCheckPermission("sys:file:query")
-    @Operation(summary = "查询文件列表(分页)")
-    public ResponseEntity<PageResp<FileVO>> getPageFileList(FileQueryDTO query) {
-        return ResponseEntity.ok(fileService.getPageFileList(query));
-    }
-
 }

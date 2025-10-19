@@ -1,4 +1,4 @@
-package com.pandar.controller;
+package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.base.PageResp;
@@ -28,40 +28,14 @@ public class StorageController {
     @Autowired
     private StorageService storageService;
 
-    @PostMapping("/addStorage")
-    @SaCheckPermission("sys:storage:add")
-    @Operation(summary = "添加存储")
-    public ResponseEntity<Void> addStorage(@RequestBody @Validated(Add.class) StorageDTO storageDTO) {
-        storageService.addStorage(storageDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @DeleteMapping("/deleteStorageByStorageId")
-    @SaCheckPermission("sys:storage:del")
-    @Operation(summary = "删除存储 -> 根据存储ID删除")
-    public ResponseEntity<Void> deleteStorageByStorageId(@RequestParam("storageId")
-                                                         @NotNull(message = "存储ID不能为空")
-                                                         @Parameter(name = "storageId", required = true, description = "存储ID") Long storageId) {
-        storageService.deleteStorageByStorageId(storageId);
-        return ResponseEntity.ok().build();
-    }
-
-    @PutMapping("/updateStorageByStorageId")
-    @SaCheckPermission("sys:storage:edit")
-    @Operation(summary = "修改存储 -> 根据存储ID修改")
-    public ResponseEntity<Void> updateStorageByStorageId(@RequestBody @Validated(Update.class) StorageDTO storageDTO) {
-        storageService.updateStorageByStorageId(storageDTO);
-        return ResponseEntity.ok().build();
-    }
-
-    @GetMapping("/getPageStorageList")
+    @GetMapping("/page")
     @SaCheckPermission("sys:storage:query")
     @Operation(summary = "查询存储列表(分页)")
     public ResponseEntity<PageResp<StorageVO>> getPageStorageList(StorageQueryDTO query) {
         return ResponseEntity.ok(storageService.getPageStorageList(query));
     }
 
-    @GetMapping("/getStorageByStorageId/{storageId}")
+    @GetMapping("/{storageId}")
     @SaCheckPermission("sys:storage:query")
     @Operation(summary = "根据存储ID查询存储信息")
     public ResponseEntity<StorageVO> getStorageByStorageId(@PathVariable(value = "storageId")
@@ -70,4 +44,29 @@ public class StorageController {
         return ResponseEntity.ok(storageService.getStorageByStorageId(storageId));
     }
 
+    @PostMapping("/add")
+    @SaCheckPermission("sys:storage:add")
+    @Operation(summary = "添加存储")
+    public ResponseEntity<Void> addStorage(@RequestBody @Validated(Add.class) StorageDTO storageDTO) {
+        storageService.addStorage(storageDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @PutMapping("/edit")
+    @SaCheckPermission("sys:storage:edit")
+    @Operation(summary = "修改存储 -> 根据存储ID修改")
+    public ResponseEntity<Void> updateStorageByStorageId(@RequestBody @Validated(Update.class) StorageDTO storageDTO) {
+        storageService.updateStorageByStorageId(storageDTO);
+        return ResponseEntity.ok().build();
+    }
+
+    @DeleteMapping("/delete")
+    @SaCheckPermission("sys:storage:del")
+    @Operation(summary = "删除存储 -> 根据存储ID删除")
+    public ResponseEntity<Void> deleteStorageByStorageId(@RequestParam("storageId")
+                                                         @NotNull(message = "存储ID不能为空")
+                                                         @Parameter(name = "storageId", required = true, description = "存储ID") Long storageId) {
+        storageService.deleteStorageByStorageId(storageId);
+        return ResponseEntity.ok().build();
+    }
 }
