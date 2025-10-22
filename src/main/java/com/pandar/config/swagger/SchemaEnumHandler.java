@@ -2,6 +2,7 @@ package com.pandar.config.swagger;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.core.util.ObjectUtil;
+import com.pandar.common.annotation.SchemaEnum;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.core.annotation.AnnotationUtils;
 

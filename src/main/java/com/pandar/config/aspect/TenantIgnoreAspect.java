@@ -1,7 +1,8 @@
-package com.pandar.config.tenant;
+package com.pandar.config.aspect;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.mybatisflex.core.tenant.TenantManager;
+import com.pandar.common.annotation.TenantIgnore;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;

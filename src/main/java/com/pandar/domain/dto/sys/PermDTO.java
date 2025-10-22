@@ -6,7 +6,7 @@ import com.pandar.common.enums.PermEnum;
 import com.pandar.common.enums.StatusEnum;
 import com.pandar.common.group.Add;
 import com.pandar.common.group.Update;
-import com.pandar.config.swagger.SchemaEnum;
+import com.pandar.common.annotation.SchemaEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;

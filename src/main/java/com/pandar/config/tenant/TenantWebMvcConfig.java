@@ -10,8 +10,10 @@ public class TenantWebMvcConfig implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         registry.addInterceptor(new TenantDatasourceInterceptor())
-                //排除/basic接口对数据源的限制，/basic只能使用master数据源
-                .excludePathPatterns("/basic/**")
+                //排除接口对数据源的限制，/sys、/auth、/tenant只能使用master数据源
+                .excludePathPatterns("/sys/**")
+                .excludePathPatterns("/auth/**")
+                .excludePathPatterns("/tenant/**")
                 .addPathPatterns("/**");
     }
 

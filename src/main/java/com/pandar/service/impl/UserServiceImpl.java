@@ -21,7 +21,7 @@ import com.pandar.common.enums.TenantEnum;
 import com.pandar.common.enums.UserEnum;
 import com.pandar.common.exception.BusinessException;
 import com.pandar.config.redis.RedisManager;
-import com.pandar.config.tenant.TenantIgnore;
+import com.pandar.common.annotation.TenantIgnore;
 import com.pandar.domain.dto.sys.*;
 import com.pandar.domain.entity.sys.*;
 import com.pandar.domain.vo.sys.*;

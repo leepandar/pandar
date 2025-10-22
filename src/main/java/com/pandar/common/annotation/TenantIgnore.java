@@ -1,4 +1,4 @@
-package com.pandar.config.tenant;
+package com.pandar.common.annotation;
 
 import java.lang.annotation.*;
 

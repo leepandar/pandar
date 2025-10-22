@@ -1,6 +1,7 @@
 package com.pandar.config.swagger;
 
 import cn.hutool.core.util.ObjectUtil;
+import com.pandar.common.annotation.SchemaEnum;
 import io.swagger.v3.core.converter.AnnotatedType;
 import io.swagger.v3.oas.models.media.Schema;
 import lombok.extern.slf4j.Slf4j;

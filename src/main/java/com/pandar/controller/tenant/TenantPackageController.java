@@ -4,7 +4,7 @@ import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.base.PageResp;
 import com.pandar.common.group.Add;
 import com.pandar.common.group.Update;
-import com.pandar.config.tenant.TenantIgnore;
+import com.pandar.common.annotation.TenantIgnore;
 import com.pandar.domain.dto.sys.TenantPackageDTO;
 import com.pandar.domain.dto.sys.TenantPackageQueryDTO;
 import com.pandar.domain.vo.sys.TenantPackageVO;

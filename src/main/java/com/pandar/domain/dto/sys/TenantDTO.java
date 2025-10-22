@@ -8,7 +8,7 @@ import com.pandar.common.enums.StatusEnum;
 import com.pandar.common.enums.TenantEnum;
 import com.pandar.common.group.Add;
 import com.pandar.common.group.Update;
-import com.pandar.config.swagger.SchemaEnum;
+import com.pandar.common.annotation.SchemaEnum;
 import com.pandar.domain.vo.sys.TenantDatasourceVO;
 import com.pandar.domain.vo.sys.UserVO;
 import io.swagger.v3.oas.annotations.media.Schema;

@@ -4,7 +4,7 @@ import cn.hutool.core.collection.CollectionUtil;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.config.dict.EDict;
+import com.pandar.common.annotation.EDict;
 import com.pandar.config.dict.EDictConstant;
 import com.pandar.domain.entity.sys.*;
 import com.pandar.domain.vo.sys.DictCacheVO;

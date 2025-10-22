@@ -5,7 +5,7 @@ import com.pandar.common.enums.NoticeEnum;
 import com.pandar.common.enums.StatusEnum;
 import com.pandar.common.group.Add;
 import com.pandar.common.group.Update;
-import com.pandar.config.swagger.SchemaEnum;
+import com.pandar.common.annotation.SchemaEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.NotNull;
 import lombok.Data;

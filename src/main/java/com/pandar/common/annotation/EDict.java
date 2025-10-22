@@ -1,4 +1,4 @@
-package com.pandar.config.dict;
+package com.pandar.common.annotation;
 
 import java.lang.annotation.*;
 

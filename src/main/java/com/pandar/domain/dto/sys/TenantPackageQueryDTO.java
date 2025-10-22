@@ -2,7 +2,7 @@ package com.pandar.domain.dto.sys;
 
 import com.pandar.common.base.PageReq;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.config.swagger.SchemaEnum;
+import com.pandar.common.annotation.SchemaEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

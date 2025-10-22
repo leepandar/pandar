@@ -41,7 +41,7 @@ public class GeneratorCodeHandler {
         //设置项目的JDK版本，项目的JDK为14及以上时建议设置该项，小于14则可以不设置
         globalConfig.setEntityJdkVersion(17);
         //设置生成 entity 包名
-        globalConfig.setEntityPackage("com.pandar.entity");
+        globalConfig.setEntityPackage("com.pandar.domain.entity");
         //自动填充
         TableConfig tableConfig = new TableConfig();
         tableConfig.setInsertListenerClass(InsertFullColumnHandler.class);

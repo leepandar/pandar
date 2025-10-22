@@ -26,7 +26,7 @@ public class TenantDatasourceInterceptor implements HandlerInterceptor {
         }
 
         String requestURI = request.getRequestURI();
-        log.info("切换数据源，访问非/basic接口，经过多数据源拦截器, 当前路径是：{}", requestURI);
+        log.info("切换数据源，访问非系统接口，经过多数据源拦截器, 当前路径是：{}", requestURI);
 
         //获取要操作的租户ID
         long tenantId = TenantUtil.getTenantId();

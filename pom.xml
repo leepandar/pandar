@@ -43,6 +43,12 @@
         <lombok.version>1.18.32</lombok.version>
         <!-- commons-pool2 -->
         <commons-pool2.version>2.11.1</commons-pool2.version>
+        <!-- 解析客户端操作系统、浏览器 -->
+        <bitwalker.version>1.21</bitwalker.version>
+        <!-- 获取系统信息 -->
+        <oshi.version>6.8.3</oshi.version>
+        <!-- fastjson -->
+        <fastjson.version>1.2.83</fastjson.version>
         <!-- java -->
         <java.version>17</java.version>
         <!-- maven.compiler -->
@@ -193,6 +199,27 @@
             <groupId>com.qiniu</groupId>
             <artifactId>qiniu-java-sdk</artifactId>
             <version>${qiniu.version}</version>
+        </dependency>
+
+        <!-- 解析客户端操作系统、浏览器等 -->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>${bitwalker.version}</version>
+        </dependency>
+
+        <!-- 获取系统信息 -->
+        <dependency>
+            <groupId>com.github.oshi</groupId>
+            <artifactId>oshi-core</artifactId>
+            <version>${oshi.version}</version>
+        </dependency>
+
+        <!-- 阿里JSON解析器 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>${fastjson.version}</version>
         </dependency>
 
         <!-- spring-boot-test -->

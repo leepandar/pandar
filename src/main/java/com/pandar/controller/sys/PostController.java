@@ -1,7 +1,9 @@
 package com.pandar.controller.sys;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
+import com.pandar.common.annotation.Log;
 import com.pandar.common.base.PageResp;
+import com.pandar.common.enums.BusinessTypeEnum;
 import com.pandar.common.group.Add;
 import com.pandar.common.group.Update;
 import com.pandar.domain.dto.sys.PostDTO;
@@ -45,6 +47,7 @@ public class PostController {
     @PostMapping("/add")
     @SaCheckPermission("sys:post:add")
     @Operation(summary = "添加岗位")
+    @Log(title = "岗位管理", businessType = BusinessTypeEnum.INSERT)
     public ResponseEntity<Void> addPost(@RequestBody @Validated(Add.class) PostDTO postDTO) {
         postService.addPost(postDTO);
         return ResponseEntity.ok().build();

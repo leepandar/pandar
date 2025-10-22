@@ -3,7 +3,7 @@ package com.pandar.controller.auth;
 import cn.dev33.satoken.annotation.SaIgnore;
 import cn.dev33.satoken.stp.SaTokenInfo;
 import cn.dev33.satoken.stp.StpUtil;
-import com.pandar.config.tenant.TenantIgnore;
+import com.pandar.common.annotation.TenantIgnore;
 import com.pandar.domain.dto.sys.UserLoginReqDTO;
 import com.pandar.service.UserService;
 import io.swagger.v3.oas.annotations.Operation;

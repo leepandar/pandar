@@ -1,6 +1,7 @@
 package com.pandar.config.tenant;
 
 import cn.hutool.core.bean.BeanUtil;
+import cn.hutool.core.util.ObjUtil;
 import cn.hutool.core.util.ObjectUtil;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.constant.CommonConstant;
@@ -48,25 +49,25 @@ public class TenantInit implements ApplicationRunner {
     @Override
     public void run(ApplicationArguments args) throws Exception {
         //查询系统多租户开关
-        Config mConfig = configMapper.selectConfigByConfigKey(CommonConstant.SYSTEM_CONFIG_TENANT, StatusEnum.STATUS_1.getCode());
-        if (ObjectUtil.isNotNull(mConfig)) {
-            boolean tenantOnOff = Boolean.parseBoolean(mConfig.getConfigValue());
+        Config config = configMapper.selectConfigByConfigKey(CommonConstant.SYSTEM_CONFIG_TENANT, StatusEnum.STATUS_1.getCode());
+        if (ObjUtil.isNotNull(config)) {
+            boolean tenantOnOff = Boolean.parseBoolean(config.getConfigValue());
             if (!tenantOnOff) {
                 //未打开多租户开关，忽略多租户
                 return;
             }
         }
 
-        List<Tenant> mTenants = tenantMapper.selectListByQuery(QueryWrapper.create()
+        List<Tenant> tenants = tenantMapper.selectListByQuery(QueryWrapper.create()
                 .eq(Tenant::getStatus, StatusEnum.STATUS_1.getCode()));
         //租户数据库隔离数据源
         List<TenantDatasource> tenantDatasourceList = tenantDatasourceMapper.selectAll();
         Map<Long, TenantDatasource> tenantDatasourceMap = tenantDatasourceList.stream().collect(Collectors.toMap(TenantDatasource::getTenantId, Function.identity()));
         //租户文件存储
-        List<Storage> mStorages = storageMapper.selectListByQuery(QueryWrapper.create()
+        List<Storage> storages = storageMapper.selectListByQuery(QueryWrapper.create()
                 .eq(Storage::getStatus, StatusEnum.STATUS_1.getCode()));
-        Map<Long, Storage> storageMap = mStorages.stream().collect(Collectors.toMap(Storage::getStorageId, Function.identity()));
-        for (Tenant tenant : mTenants) {
+        Map<Long, Storage> storageMap = storages.stream().collect(Collectors.toMap(Storage::getStorageId, Function.identity()));
+        for (Tenant tenant : tenants) {
             TenantVO tenantVO = BeanUtil.copyProperties(tenant, TenantVO.class);
             //查询租户数据源
             if (tenantDatasourceMap.containsKey(tenant.getTenantId())) {
@@ -84,5 +85,4 @@ public class TenantInit implements ApplicationRunner {
             CommonConstant.tenantMap.put(tenant.getTenantId(), tenantVO);
         }
     }
-
 }
