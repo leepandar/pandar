@@ -48,7 +48,7 @@ public class OperLogServiceImpl implements OperLogService {
      * @return 操作日志数据
      */
     @Override
-    public OperLog getOperLogByPostId(Long operId) {
+    public OperLog getOperLogByOperId(Long operId) {
         return operLogMapper.selectOperLogByOperId(operId);
     }
 }

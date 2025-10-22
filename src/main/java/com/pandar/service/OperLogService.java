@@ -27,6 +27,6 @@ public interface OperLogService {
      * @param postId 操作日志ID
      * @return 操作日志数据
      */
-    OperLog getOperLogByPostId(Long postId);
+    OperLog getOperLogByOperId(Long postId);
 
 }
