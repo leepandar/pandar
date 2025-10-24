@@ -1,10 +1,9 @@
 package com.pandar.service;
 
-
-import com.pandar.domain.dto.sys.PermDTO;
-import com.pandar.domain.entity.sys.Perms;
-import com.pandar.domain.dto.sys.PermQueryDTO;
-import com.pandar.domain.vo.sys.PermVO;
+import com.pandar.domain.dto.PermDTO;
+import com.pandar.domain.entity.Perms;
+import com.pandar.domain.dto.PermQueryDTO;
+import com.pandar.domain.vo.PermVO;
 
 import java.util.List;
 

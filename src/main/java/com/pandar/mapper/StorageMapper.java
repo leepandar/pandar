@@ -3,9 +3,9 @@ package com.pandar.mapper;
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.Storage;
-import com.pandar.domain.dto.sys.StorageQueryDTO;
-import com.pandar.domain.vo.sys.StorageVO;
+import com.pandar.domain.entity.Storage;
+import com.pandar.domain.dto.StorageQueryDTO;
+import com.pandar.domain.vo.StorageVO;
 
 public interface StorageMapper extends BaseMapper<Storage> {
     /**

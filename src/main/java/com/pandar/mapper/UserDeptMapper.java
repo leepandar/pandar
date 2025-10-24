@@ -2,7 +2,7 @@ package com.pandar.mapper;
 
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.UserDept;
+import com.pandar.domain.entity.UserDept;
 
 import java.util.List;
 

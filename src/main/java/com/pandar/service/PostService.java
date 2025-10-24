@@ -1,10 +1,9 @@
 package com.pandar.service;
 
-
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.PostDTO;
-import com.pandar.domain.dto.sys.PostQueryDTO;
-import com.pandar.domain.vo.sys.PostVO;
+import com.pandar.domain.dto.PostDTO;
+import com.pandar.domain.dto.PostQueryDTO;
+import com.pandar.domain.vo.PostVO;
 
 import java.util.List;
 

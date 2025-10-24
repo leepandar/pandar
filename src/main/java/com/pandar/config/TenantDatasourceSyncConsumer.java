@@ -6,7 +6,7 @@ import cn.hutool.json.JSONUtil;
 import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.constant.RedisKeyConstant;
 import com.pandar.common.enums.TenantEnum;
-import com.pandar.domain.vo.sys.TenantVO;
+import com.pandar.domain.vo.TenantVO;
 import com.pandar.manager.TenantManager;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RPatternTopic;

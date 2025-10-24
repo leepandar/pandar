@@ -1,12 +1,11 @@
 package com.pandar.service;
 
-
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.DictInfoDTO;
-import com.pandar.domain.vo.sys.DictCacheVO;
-import com.pandar.domain.vo.sys.DictInfoVO;
-import com.pandar.domain.dto.sys.DictQueryDTO;
-import com.pandar.domain.vo.sys.DictVO;
+import com.pandar.domain.dto.DictInfoDTO;
+import com.pandar.domain.vo.DictCacheVO;
+import com.pandar.domain.vo.DictInfoVO;
+import com.pandar.domain.dto.DictQueryDTO;
+import com.pandar.domain.vo.DictVO;
 
 import java.util.List;
 

@@ -1,6 +1,6 @@
 package com.pandar.service;
 
-import com.pandar.domain.vo.sys.DictCacheVO;
+import com.pandar.domain.vo.DictCacheVO;
 
 /**
  * 额外的字典数据，这些数据不会出现在字典管理表中，因为这些数据是来源于其他表

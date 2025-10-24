@@ -1,10 +1,9 @@
 package com.pandar.service;
 
-
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.TenantDTO;
-import com.pandar.domain.dto.sys.TenantQueryDTO;
-import com.pandar.domain.vo.sys.TenantVO;
+import com.pandar.domain.dto.TenantDTO;
+import com.pandar.domain.dto.TenantQueryDTO;
+import com.pandar.domain.vo.TenantVO;
 
 public interface TenantService {
 

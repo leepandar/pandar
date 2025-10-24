@@ -1,13 +1,11 @@
 package com.pandar.service.impl;
 
-import cn.hutool.core.bean.BeanUtil;
 import com.mybatisflex.core.paginate.Page;
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.OperLogQueryDTO;
-import com.pandar.domain.entity.sys.OperLog;
+import com.pandar.domain.dto.OperLogQueryDTO;
+import com.pandar.domain.entity.OperLog;
 import com.pandar.mapper.OperLogMapper;
 import com.pandar.service.OperLogService;
-import com.pandar.utils.TenantUtil;
 import com.pandar.utils.UnqIdUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

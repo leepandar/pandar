@@ -1,7 +1,7 @@
 package com.pandar.config.file.handler;
 
-import com.pandar.domain.entity.sys.File;
-import com.pandar.domain.entity.sys.Storage;
+import com.pandar.domain.entity.File;
+import com.pandar.domain.entity.Storage;
 import org.springframework.web.multipart.MultipartFile;
 
 public interface FileHandler {

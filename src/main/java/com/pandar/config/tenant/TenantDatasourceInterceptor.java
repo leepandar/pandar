@@ -4,7 +4,7 @@ import cn.hutool.core.util.ObjectUtil;
 import com.baomidou.dynamic.datasource.toolkit.DynamicDataSourceContextHolder;
 import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.enums.TenantEnum;
-import com.pandar.domain.vo.sys.TenantVO;
+import com.pandar.domain.vo.TenantVO;
 import com.pandar.utils.TenantUtil;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;

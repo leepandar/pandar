@@ -4,9 +4,9 @@ import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.domain.entity.sys.Post;
-import com.pandar.domain.dto.sys.PostQueryDTO;
-import com.pandar.domain.vo.sys.PostVO;
+import com.pandar.domain.entity.Post;
+import com.pandar.domain.dto.PostQueryDTO;
+import com.pandar.domain.vo.PostVO;
 
 import java.util.List;
 

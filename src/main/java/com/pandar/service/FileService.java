@@ -1,13 +1,12 @@
 package com.pandar.service;
 
-
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.FileQueryDTO;
-import com.pandar.domain.dto.sys.FileUploadBatchDTO;
-import com.pandar.domain.dto.sys.FileUploadDTO;
-import com.pandar.domain.entity.sys.File;
-import com.pandar.domain.vo.sys.FileUploadRespVO;
-import com.pandar.domain.vo.sys.FileVO;
+import com.pandar.domain.dto.FileQueryDTO;
+import com.pandar.domain.dto.FileUploadBatchDTO;
+import com.pandar.domain.dto.FileUploadDTO;
+import com.pandar.domain.entity.File;
+import com.pandar.domain.vo.FileUploadRespVO;
+import com.pandar.domain.vo.FileVO;
 
 import java.util.List;
 

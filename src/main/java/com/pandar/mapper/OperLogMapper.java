@@ -3,8 +3,8 @@ package com.pandar.mapper;
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.dto.sys.OperLogQueryDTO;
-import com.pandar.domain.entity.sys.OperLog;
+import com.pandar.domain.dto.OperLogQueryDTO;
+import com.pandar.domain.entity.OperLog;
 
 public interface OperLogMapper extends BaseMapper<OperLog> {
 

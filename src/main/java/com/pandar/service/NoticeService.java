@@ -1,11 +1,10 @@
 package com.pandar.service;
 
-
 import com.pandar.common.base.PageReq;
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.NoticeDTO;
-import com.pandar.domain.dto.sys.NoticeQueryDTO;
-import com.pandar.domain.vo.sys.NoticeVO;
+import com.pandar.domain.dto.NoticeDTO;
+import com.pandar.domain.dto.NoticeQueryDTO;
+import com.pandar.domain.vo.NoticeVO;
 
 public interface NoticeService {
 

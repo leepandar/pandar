@@ -5,7 +5,7 @@ import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.enums.StatusEnum;
 import com.pandar.common.enums.StorageEnum;
 import com.pandar.config.file.entity.LocalFile;
-import com.pandar.domain.entity.sys.Storage;
+import com.pandar.domain.entity.Storage;
 import com.pandar.mapper.StorageMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;

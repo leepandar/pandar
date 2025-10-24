@@ -1,9 +1,8 @@
 package com.pandar.service;
 
-
-import com.pandar.domain.dto.sys.DeptDTO;
-import com.pandar.domain.dto.sys.DeptQueryDTO;
-import com.pandar.domain.vo.sys.DeptVO;
+import com.pandar.domain.dto.DeptDTO;
+import com.pandar.domain.dto.DeptQueryDTO;
+import com.pandar.domain.vo.DeptVO;
 
 import java.util.List;
 

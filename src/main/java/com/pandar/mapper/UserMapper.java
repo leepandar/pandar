@@ -6,14 +6,12 @@ import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.domain.dto.sys.UserQueryDTO;
-import com.pandar.domain.entity.sys.Dept;
-import com.pandar.domain.entity.sys.User;
-import com.pandar.domain.entity.sys.UserDept;
-import com.pandar.domain.entity.sys.table.DeptTableDef;
-import com.pandar.domain.entity.sys.table.UserDeptTableDef;
-import com.pandar.domain.entity.sys.table.UserTableDef;
-import com.pandar.domain.vo.sys.UserVO;
+import com.pandar.domain.dto.UserQueryDTO;
+import com.pandar.domain.entity.User;
+import com.pandar.domain.entity.table.DeptTableDef;
+import com.pandar.domain.entity.table.UserDeptTableDef;
+import com.pandar.domain.entity.table.UserTableDef;
+import com.pandar.domain.vo.UserVO;
 
 import java.util.List;
 

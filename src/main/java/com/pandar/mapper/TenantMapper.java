@@ -5,9 +5,9 @@ import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.domain.entity.sys.Tenant;
-import com.pandar.domain.dto.sys.TenantQueryDTO;
-import com.pandar.domain.vo.sys.TenantVO;
+import com.pandar.domain.entity.Tenant;
+import com.pandar.domain.dto.TenantQueryDTO;
+import com.pandar.domain.vo.TenantVO;
 
 import java.util.List;
 

@@ -1,9 +1,9 @@
 package com.pandar.service;
 
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.StorageDTO;
-import com.pandar.domain.dto.sys.StorageQueryDTO;
-import com.pandar.domain.vo.sys.StorageVO;
+import com.pandar.domain.dto.StorageDTO;
+import com.pandar.domain.dto.StorageQueryDTO;
+import com.pandar.domain.vo.StorageVO;
 
 public interface StorageService {
 

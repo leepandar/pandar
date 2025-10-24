@@ -2,7 +2,7 @@ package com.pandar.mapper;
 
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.TenantDatasource;
+import com.pandar.domain.entity.TenantDatasource;
 
 public interface TenantDatasourceMapper extends BaseMapper<TenantDatasource> {
 

@@ -7,7 +7,7 @@ import cn.hutool.core.util.StrUtil;
 import com.alibaba.fastjson.JSONObject;
 import com.alibaba.fastjson.support.spring.PropertyPreFilters;
 import com.pandar.common.enums.BusinessStatusEnum;
-import com.pandar.domain.entity.sys.OperLog;
+import com.pandar.domain.entity.OperLog;
 import com.pandar.service.OperLogService;
 import com.pandar.utils.*;
 import jakarta.servlet.http.HttpServletRequest;

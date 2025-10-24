@@ -4,8 +4,8 @@ import cn.hutool.core.util.ObjectUtil;
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.File;
-import com.pandar.domain.dto.sys.FileQueryDTO;
+import com.pandar.domain.entity.File;
+import com.pandar.domain.dto.FileQueryDTO;
 
 import java.time.LocalDateTime;
 import java.util.List;

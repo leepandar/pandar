@@ -2,10 +2,10 @@ package com.pandar.service;
 
 import cn.dev33.satoken.stp.SaTokenInfo;
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.*;
-import com.pandar.domain.vo.sys.ImageCaptchaVO;
-import com.pandar.domain.vo.sys.UserInfoVO;
-import com.pandar.domain.vo.sys.UserVO;
+import com.pandar.domain.dto.*;
+import com.pandar.domain.vo.ImageCaptchaVO;
+import com.pandar.domain.vo.UserInfoVO;
+import com.pandar.domain.vo.UserVO;
 import org.springframework.stereotype.Service;
 
 @Service

@@ -1,10 +1,10 @@
 package com.pandar.service;
 
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.RoleDTO;
-import com.pandar.domain.entity.sys.Role;
-import com.pandar.domain.dto.sys.RoleQueryDTO;
-import com.pandar.domain.vo.sys.RoleVO;
+import com.pandar.domain.dto.RoleDTO;
+import com.pandar.domain.entity.Role;
+import com.pandar.domain.dto.RoleQueryDTO;
+import com.pandar.domain.vo.RoleVO;
 
 import java.util.List;
 

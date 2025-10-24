@@ -40,6 +40,21 @@ public enum BusinessTypeEnum {
     IMPORT,
 
     /**
+     * 上传
+     */
+    UPLOAD,
+
+    /**
+     * 下载
+     */
+    DOWNLOAD,
+
+    /**
+     * 重置
+     */
+    RESET,
+
+    /**
      * 强退
      */
     FORCE,

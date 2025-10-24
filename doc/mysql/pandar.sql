@@ -277,7 +277,7 @@ CREATE TABLE `sys_oper_log` (
 -- Records of sys_oper_log
 -- ----------------------------
 BEGIN;
-INSERT INTO `sys_oper_log` VALUES (1, 0, '岗位管理', 1, 'com.pandar.controller.sys.PostController.addPost()', 'POST', 1, 1980881392652599296, '/pandar/sys/post/add', '127.0.0.1', '内网IP', '{\"postCode\":\"111\",\"postName\":\"111\",\"postSort\":111}', '{\"headers\":{},\"statusCode\":\"OK\",\"statusCodeValue\":200}', 0, '', NULL, 4846, 0, 0, '2025-10-22 14:18:21.000000', 0, '2025-10-22 14:18:21.000000', b'0', 0);
+INSERT INTO `sys_oper_log` VALUES (1, 0, '岗位管理', 1, 'com.pandar.controller.PostController.addPost()', 'POST', 1, 1980881392652599296, '/pandar/sys/post/add', '127.0.0.1', '内网IP', '{\"postCode\":\"111\",\"postName\":\"111\",\"postSort\":111}', '{\"headers\":{},\"statusCode\":\"OK\",\"statusCodeValue\":200}', 0, '', NULL, 4846, 0, 0, '2025-10-22 14:18:21.000000', 0, '2025-10-22 14:18:21.000000', b'0', 0);
 COMMIT;
 
 -- ----------------------------

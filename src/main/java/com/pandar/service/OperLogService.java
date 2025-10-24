@@ -1,8 +1,8 @@
 package com.pandar.service;
 
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.OperLogQueryDTO;
-import com.pandar.domain.entity.sys.OperLog;
+import com.pandar.domain.dto.OperLogQueryDTO;
+import com.pandar.domain.entity.OperLog;
 
 public interface OperLogService {
 

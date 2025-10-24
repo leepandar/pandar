@@ -6,8 +6,8 @@ import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.base.PageReq;
 import com.pandar.common.enums.NoticeEnum;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.domain.entity.sys.Notice;
-import com.pandar.domain.dto.sys.NoticeQueryDTO;
+import com.pandar.domain.entity.Notice;
+import com.pandar.domain.dto.NoticeQueryDTO;
 
 import java.time.LocalDateTime;
 

@@ -3,8 +3,8 @@ package com.pandar.mapper;
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.Config;
-import com.pandar.domain.dto.sys.ConfigQueryDTO;
+import com.pandar.domain.entity.Config;
+import com.pandar.domain.dto.ConfigQueryDTO;
 
 public interface ConfigMapper extends BaseMapper<Config> {
 

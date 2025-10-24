@@ -4,7 +4,7 @@ import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.StrUtil;
 import com.pandar.common.exception.BusinessException;
 import com.pandar.config.file.handler.FileHandler;
-import com.pandar.domain.entity.sys.Dict;
+import com.pandar.domain.entity.Dict;
 import com.pandar.mapper.DictMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

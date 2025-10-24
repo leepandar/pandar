@@ -4,9 +4,9 @@ import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.domain.entity.sys.Role;
-import com.pandar.domain.dto.sys.RoleQueryDTO;
-import com.pandar.domain.vo.sys.RoleVO;
+import com.pandar.domain.entity.Role;
+import com.pandar.domain.dto.RoleQueryDTO;
+import com.pandar.domain.vo.RoleVO;
 
 import java.util.List;
 

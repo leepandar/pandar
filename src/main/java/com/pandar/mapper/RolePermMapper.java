@@ -2,7 +2,7 @@ package com.pandar.mapper;
 
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.RolePerm;
+import com.pandar.domain.entity.RolePerm;
 
 import java.util.List;
 

@@ -3,8 +3,8 @@ package com.pandar.mapper;
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.query.QueryWrapper;
 import com.pandar.common.enums.StatusEnum;
-import com.pandar.domain.entity.sys.Dept;
-import com.pandar.domain.dto.sys.DeptQueryDTO;
+import com.pandar.domain.entity.Dept;
+import com.pandar.domain.dto.DeptQueryDTO;
 
 import java.util.List;
 

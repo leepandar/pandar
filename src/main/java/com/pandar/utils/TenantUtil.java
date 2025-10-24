@@ -8,7 +8,7 @@ import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.enums.UserEnum;
 import com.pandar.common.exception.BusinessException;
 import com.pandar.common.annotation.TenantIgnore;
-import com.pandar.domain.vo.sys.ConfigVO;
+import com.pandar.domain.vo.ConfigVO;
 import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

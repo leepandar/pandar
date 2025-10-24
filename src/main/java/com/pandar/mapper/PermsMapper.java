@@ -2,8 +2,8 @@ package com.pandar.mapper;
 
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.Perms;
-import com.pandar.domain.dto.sys.PermQueryDTO;
+import com.pandar.domain.entity.Perms;
+import com.pandar.domain.dto.PermQueryDTO;
 
 import java.util.List;
 

@@ -4,7 +4,7 @@ import cn.hutool.core.util.StrUtil;
 import cn.hutool.json.JSONUtil;
 import com.pandar.common.constant.CommonConstant;
 import com.pandar.common.constant.RedisKeyConstant;
-import com.pandar.domain.vo.sys.ConfigVO;
+import com.pandar.domain.vo.ConfigVO;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RPatternTopic;
 import org.redisson.api.RedissonClient;

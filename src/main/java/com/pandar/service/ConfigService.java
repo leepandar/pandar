@@ -1,9 +1,9 @@
 package com.pandar.service;
 
 import com.pandar.common.base.PageResp;
-import com.pandar.domain.dto.sys.ConfigDTO;
-import com.pandar.domain.dto.sys.ConfigQueryDTO;
-import com.pandar.domain.vo.sys.ConfigVO;
+import com.pandar.domain.dto.ConfigDTO;
+import com.pandar.domain.dto.ConfigQueryDTO;
+import com.pandar.domain.vo.ConfigVO;
 
 public interface ConfigService {
 

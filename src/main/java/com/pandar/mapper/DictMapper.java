@@ -3,9 +3,9 @@ package com.pandar.mapper;
 import com.mybatisflex.core.BaseMapper;
 import com.mybatisflex.core.paginate.Page;
 import com.mybatisflex.core.query.QueryWrapper;
-import com.pandar.domain.entity.sys.Dict;
-import com.pandar.domain.dto.sys.DictQueryDTO;
-import com.pandar.domain.vo.sys.DictVO;
+import com.pandar.domain.entity.Dict;
+import com.pandar.domain.dto.DictQueryDTO;
+import com.pandar.domain.vo.DictVO;
 
 import java.util.List;
 
