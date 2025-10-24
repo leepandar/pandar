@@ -1,4 +1,4 @@
-package com.pandar.config.convert;
+package com.pandar.common.convert;
 
 import cn.hutool.core.collection.CollectionUtil;
 import com.fasterxml.jackson.core.JsonGenerator;

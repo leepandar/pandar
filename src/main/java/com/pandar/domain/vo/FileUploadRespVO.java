@@ -2,7 +2,7 @@ package com.pandar.domain.vo;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
-import com.pandar.config.convert.FileSizeSerializer;
+import com.pandar.common.convert.FileSizeSerializer;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
 

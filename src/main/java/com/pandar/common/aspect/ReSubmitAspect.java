@@ -1,4 +1,4 @@
-package com.pandar.config.aspect;
+package com.pandar.common.aspect;
 
 import cn.hutool.core.map.MapUtil;
 import cn.hutool.core.util.ArrayUtil;

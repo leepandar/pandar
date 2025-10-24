@@ -1,4 +1,4 @@
-package com.pandar.config.aspect;
+package com.pandar.common.aspect;
 
 import cn.hutool.core.util.ObjectUtil;
 import com.mybatisflex.core.tenant.TenantManager;

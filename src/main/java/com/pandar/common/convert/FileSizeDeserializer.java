@@ -1,4 +1,4 @@
-package com.pandar.config.convert;
+package com.pandar.common.convert;
 
 import cn.hutool.core.io.unit.DataSizeUtil;
 import cn.hutool.core.util.StrUtil;

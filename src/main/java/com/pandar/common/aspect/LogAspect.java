@@ -1,4 +1,4 @@
-package com.pandar.config.aspect;
+package com.pandar.common.aspect;
 
 import cn.dev33.satoken.stp.StpUtil;
 import cn.hutool.core.convert.Convert;

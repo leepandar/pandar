@@ -5,7 +5,7 @@ import com.fasterxml.jackson.databind.ser.std.NullSerializer;
 import com.fasterxml.jackson.databind.ser.std.ToStringSerializer;
 import com.pandar.common.enums.StatusEnum;
 import com.pandar.common.enums.UserEnum;
-import com.pandar.config.convert.LongArrJsonSerializer;
+import com.pandar.common.convert.LongArrJsonSerializer;
 import com.pandar.common.annotation.SchemaEnum;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;

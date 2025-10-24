@@ -1,4 +1,4 @@
-package com.pandar.config.convert;
+package com.pandar.common.convert;
 
 import cn.hutool.core.io.FileUtil;
 import cn.hutool.core.util.ObjectUtil;
