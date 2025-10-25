@@ -85,13 +85,6 @@ public class UserController {
         return ResponseEntity.ok(userService.getUserInfo());
     }
 
-    @SaIgnore
-    @GetMapping("/captcha")
-    @Operation(summary = "获取图形验证码")
-    public ResponseEntity<ImageCaptchaVO> getImageCaptcha() {
-        return ResponseEntity.ok(userService.getImageCaptcha());
-    }
-
     @SaCheckLogin
     @PostMapping("/resetPassword")
     @Operation(summary = "重置密码")
