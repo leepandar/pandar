@@ -3,7 +3,11 @@ package com.pandar.service;
 import com.pandar.common.base.PageResp;
 import com.pandar.domain.dto.PostDTO;
 import com.pandar.domain.dto.PostQueryDTO;
+import com.pandar.domain.entity.Post;
+import com.pandar.domain.vo.PostExcelVO;
 import com.pandar.domain.vo.PostVO;
+import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 
 import java.util.List;
 
@@ -39,6 +43,14 @@ public interface PostService {
     PageResp<PostVO> getPagePostList(PostQueryDTO query);
 
     /**
+     * 查询岗位列表(列表)
+     *
+     * @param query 查询参数
+     * @return 岗位列表
+     */
+    List<PostExcelVO> getPostList(PostQueryDTO query);
+
+    /**
      * 根据岗位ID查询岗位
      *
      * @param postId 岗位ID
@@ -54,4 +66,12 @@ public interface PostService {
      */
     List<PostVO> getPostByUserId(Long userId);
 
+    /**
+     * 导入岗位
+     *
+     * @param posts
+     * @param bindingResult
+     * @return
+     */
+    ResponseEntity importPost(List<PostExcelVO> posts, BindingResult bindingResult);
 }

@@ -2,12 +2,16 @@ package com.pandar.controller;
 
 import cn.dev33.satoken.annotation.SaCheckPermission;
 import com.pandar.common.annotation.Log;
+import com.pandar.common.annotation.RequestExcel;
+import com.pandar.common.annotation.ResponseExcel;
 import com.pandar.common.base.PageResp;
 import com.pandar.common.enums.BusinessTypeEnum;
 import com.pandar.common.group.Add;
 import com.pandar.common.group.Update;
 import com.pandar.domain.dto.PostDTO;
 import com.pandar.domain.dto.PostQueryDTO;
+import com.pandar.domain.entity.Post;
+import com.pandar.domain.vo.PostExcelVO;
 import com.pandar.domain.vo.PostVO;
 import com.pandar.service.PostService;
 import io.swagger.v3.oas.annotations.Operation;
@@ -16,8 +20,11 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import jakarta.validation.constraints.NotNull;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
+import org.springframework.validation.BindingResult;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @Tag(name = "岗位管理")
 @RequestMapping("/sys/post")
@@ -71,5 +78,22 @@ public class PostController {
                                                    @Parameter(name = "postId", required = true, description = "岗位ID") Long postId) {
         postService.deletePostByPostId(postId);
         return ResponseEntity.ok().build();
+    }
+
+    @ResponseExcel
+    @GetMapping("/export")
+    @SaCheckPermission("sys:post:export")
+    @Operation(summary = "导出岗位")
+    @Log(title = "岗位管理", businessType = BusinessTypeEnum.IMPORT)
+    public List<PostExcelVO> exportPost(PostQueryDTO query) {
+        return postService.getPostList(query);
+    }
+
+    @PostMapping("/import")
+    @SaCheckPermission("sys:post:import")
+    @Operation(summary = "导入岗位")
+    @Log(title = "岗位管理", businessType = BusinessTypeEnum.EXPORT)
+    public ResponseEntity importPost(@RequestExcel List<PostExcelVO> postList, BindingResult bindingResult) {
+        return postService.importPost(postList, bindingResult);
     }
 }

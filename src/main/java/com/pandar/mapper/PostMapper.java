@@ -85,4 +85,17 @@ public interface PostMapper extends BaseMapper<Post> {
     default List<Post> selectPostDict() {
         return selectListByQuery(QueryWrapper.create().eq(Post::getStatus, StatusEnum.STATUS_1.getCode()));
     }
+
+    /**
+     * 根据条件查询岗位列表
+     *
+     * @param query 查询参数
+     * @return 岗位列表
+     */
+    default List<Post> selectPostList(PostQueryDTO query) {
+        return selectListByQuery(QueryWrapper.create()
+                .eq(Post::getStatus, query.getStatus())
+                .eq(Post::getPostCode, query.getPostCode())
+                .like(Post::getPostName, query.getPostName()));
+    }
 }
