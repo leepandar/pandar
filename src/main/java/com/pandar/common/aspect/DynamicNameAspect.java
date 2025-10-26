@@ -1,7 +1,7 @@
 package com.pandar.common.aspect;
 
 import com.pandar.common.annotation.ResponseExcel;
-import com.pandar.config.excel.processor.NameProcessor;
+import com.pandar.framework.excel.processor.NameProcessor;
 import lombok.RequiredArgsConstructor;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.annotation.Aspect;

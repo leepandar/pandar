@@ -51,6 +51,8 @@
         <fastjson.version>1.2.83</fastjson.version>
         <!-- easyexcel -->
         <easyexcel.version>3.1.1</easyexcel.version>
+        <!-- spring-boot-admin -->
+        <spring-boot-admin.version>3.3.6</spring-boot-admin.version>
         <!-- java -->
         <java.version>17</java.version>
         <!-- maven.compiler -->
@@ -62,26 +64,49 @@
         <project.package.encoding>UTF-8</project.package.encoding>
     </properties>
 
+    <dependencyManagement>
+        <dependencies>
+            <!-- springboot统一依赖管理 -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${springboot.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
         <!-- web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
-            <version>${springboot.version}</version>
         </dependency>
 
         <!-- aop -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>
-            <version>${springboot.version}</version>
+        </dependency>
+
+        <!-- spring-boot-test -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- spring-boot-actuator -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
 
         <!-- 参数校验 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-validation</artifactId>
-            <version>${springboot.version}</version>
         </dependency>
 
         <!-- swagger-knife4j -->
@@ -235,14 +260,6 @@
                     <artifactId>commons-compress</artifactId>
                 </exclusion>
             </exclusions>
-        </dependency>
-
-        <!-- spring-boot-test -->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-test</artifactId>
-            <version>${springboot.version}</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
 

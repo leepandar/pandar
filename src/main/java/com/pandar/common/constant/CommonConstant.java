@@ -1,7 +1,7 @@
 package com.pandar.common.constant;
 
-import com.pandar.domain.vo.ConfigVO;
-import com.pandar.domain.vo.TenantVO;
+import com.pandar.modules.sys.domain.vo.ConfigVO;
+import com.pandar.modules.sys.domain.vo.TenantVO;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;

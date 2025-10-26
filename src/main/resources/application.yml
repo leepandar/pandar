@@ -8,3 +8,89 @@ server:
 spring:
   profiles:
     active: @spring.profiles.active@
+
+############## mybatis-flex 配置 ##############
+mybatis-flex:
+  configuration:
+    map-underscore-to-camel-case: true
+    auto-mapping-behavior: full
+  mapper-locations:
+    - classpath*:mapper/**/*.xml
+  global-config:
+    # 逻辑删除字段
+    logic-delete-column: deleted
+  # 别名包扫描路径
+  type-aliases-package: com.pandar.**.entity
+
+############## XSS配置 ##############
+mica:
+  xss:
+    # 开启xss
+    enabled: true
+    # 【全局】是否去除文本首尾空格
+    trim-text: true
+    # mode有三个模式：clear清理（默认）、escape转义、validate校验，
+    # validate校验模式，校验未通过会抛出异常，可使用全局异常捕获进行处理
+    # clear模式，会将不允许的数据清理掉
+    # escape模式，会将不允许的数据转义
+    # 出错抛出的异常：
+    # json处理默认使用jackson，jackson校验未通过异常：HttpMessageNotReadableException
+    # form表单校验未通过异常：MethodArgumentConversionNotSupportedException
+    mode: clear
+    # 是否保留换行
+    pretty-print: false
+    # 是否转义
+    enable-escape: false
+    # 需要拦截的路由
+    path-patterns: /**
+    # 需要放行的路由，可以配置，也可以使用 @XssCleanIgnore 注解对某个方法和类进行忽略
+    # 若需要对实体类的某个字段忽略，使用 @JsonDeserialize(using = XssCleanDeserializer.class) 注解忽略
+    path-exclude-patterns:
+
+############## Sa-Token 配置 (文档: https://sa-token.cc) ##############
+sa-token:
+  # token 名称，默认：satoken
+  token-name: Authentication
+  # token 有效期（单位：秒） 604800秒=7天，默认2592000秒=30天，-1=永久有效
+  timeout: 604800
+  # token 最低活跃频率（单位：秒），如果 token 超过此时间没有访问系统就会被冻结，默认-1 代表不限制，永不冻结
+  active-timeout: -1
+  # 是否允许同一账号多地同时登录 （为 true 时允许一起登录, 为 false 时新登录挤掉旧登录）
+  is-concurrent: true
+  # 在多人登录同一账号时，是否共用一个 token （为 true 时所有登录共用一个 token, 为 false 时每次登录新建一个 token）
+  is-share: false
+  # token 风格（默认可取值：uuid、simple-uuid、random-32、random-64、random-128、tik）
+  token-style: simple-uuid
+  # 是否输出操作日志
+  is-log: true
+
+############## openapi 项目文档配置 ##############
+springdoc:
+  title: Pandar
+  authorName: leepandar
+  authorUrl: https://leepandar.cn
+  authorEmail: 849998287@qq.com
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: '1.权限认证'
+      paths-to-match: '/auth'
+      packages-to-scan: com.pandar.controller.auth
+    - group: '2.系统设置'
+      paths-to-match: '/sys/'
+      packages-to-scan: com.pandar.controller.sys
+    - group: '3.租户设置'
+      paths-to-match: '/tenant'
+      packages-to-scan: com.pandar.controller.tenant
+
+############## knife4j配置 ##############
+knife4j:
+  # 启用增强模式
+  enable: true
+  setting:
+    language: zh_cn
+    swagger-model-name: 实体说明

@@ -3,7 +3,7 @@ package com.pandar.common.annotation;
 import com.alibaba.excel.converters.Converter;
 import com.alibaba.excel.support.ExcelTypeEnum;
 import com.alibaba.excel.write.handler.WriteHandler;
-import com.pandar.config.excel.head.HeadGenerator;
+import com.pandar.framework.excel.head.HeadGenerator;
 
 import java.lang.annotation.*;
 

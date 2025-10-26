@@ -1,6 +1,6 @@
 package com.pandar.common.annotation;
 
-import com.pandar.config.excel.head.HeadGenerator;
+import com.pandar.framework.excel.head.HeadGenerator;
 
 import java.lang.annotation.*;
 

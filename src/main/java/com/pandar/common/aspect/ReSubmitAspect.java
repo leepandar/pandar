@@ -11,7 +11,7 @@ import cn.hutool.json.JSONObject;
 import cn.hutool.json.JSONUtil;
 import com.pandar.common.constant.RedisKeyConstant;
 import com.pandar.common.enums.RespEnum;
-import com.pandar.config.redis.RedisManager;
+import com.pandar.framework.redis.RedisManager;
 import com.pandar.common.annotation.ReSubmit;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.extern.slf4j.Slf4j;

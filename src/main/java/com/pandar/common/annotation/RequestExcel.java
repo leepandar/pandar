@@ -1,7 +1,7 @@
 package com.pandar.common.annotation;
 
-import com.pandar.config.excel.handler.DefaultAnalysisEventListener;
-import com.pandar.config.excel.handler.ListAnalysisEventListener;
+import com.pandar.framework.excel.handler.DefaultAnalysisEventListener;
+import com.pandar.framework.excel.handler.ListAnalysisEventListener;
 
 import java.lang.annotation.*;
 
